@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->nullable()->onDelete('cascade');
-            $table->foreignId('language_id')->nullable()->onDelete('cascade');
-            $table->foreignId('level_id')->nullable()->onDelete('cascade');
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('language_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('level_id')->nullable()->constrained()->onDelete('cascade');
             $table->text('description')->nullable();
             $table->double('price',10,2)->nullable();
             $table->double('cross_price',10,2)->nullable();
